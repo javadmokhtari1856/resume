@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جواد مختاری | رزومهٔ حرفه‌ای</title>
+<meta name="description" content="رزومهٔ حرفه‌ای جواد مختاری — توسعه‌دهندهٔ وب و طراح رابط کاربری از شیراز">
+
+<script>(function(){try{var t=localStorage.getItem('jm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#06080f;--bg-soft:#0a0e1c;--surface:#0d1322;--surface-2:#111a30;
+  --line:rgba(120,180,255,.15);--text:#eaf3ff;--muted:#9db0cf;
+  --c1:#00e5ff;--c2:#ff3ecd;--c3:#b6ff4d;
+  --glow1:rgba(0,229,255,.55);--glow2:rgba(255,62,205,.5);
+  --header:rgba(6,8,15,.72);--shadow:0 22px 60px rgba(0,0,0,.55);
+  --r-sm:10px;--r-md:14px;--r-lg:20px;
+  --font-body:'Vazirmatn',system-ui,sans-serif;
+  --font-disp:'Lalezar','Vazirmatn',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+[data-theme="light"]{
+  --bg:#eef3fb;--bg-soft:#e3ebf8;--surface:#ffffff;--surface-2:#f4f8ff;
+  --line:rgba(15,45,90,.14);--text:#0b1220;--muted:#47566f;
+  --c1:#0085c7;--c2:#c81d8f;--c3:#5c9e00;
+  --glow1:rgba(0,133,199,.30);--glow2:rgba(200,29,143,.28);
+  --header:rgba(243,247,253,.78);--shadow:0 20px 50px rgba(23,43,77,.14);
+}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);
+  line-height:1.9;font-size:16.5px;overflow-x:hidden;transition:background .5s var(--ease),color .5s var(--ease)}
+::selection{background:var(--c2);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit}
+:focus-visible{outline:2px solid var(--c1);outline-offset:3px;border-radius:4px}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg-soft)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--c1),var(--c2));border-radius:8px}
+.container{width:min(1180px,92%);margin-inline:auto}
+
+.noise{position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.6'/></svg>")}
+#spot{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.16;
+  background:radial-gradient(520px at var(--x,60%) var(--y,30%),var(--glow1),transparent 62%)}
+[data-theme="light"] #spot{opacity:.28}
+#progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:120;
+  background:linear-gradient(90deg,var(--c1),var(--c2));transform:scaleX(0);transform-origin:right}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;border-radius:12px;
+  font-weight:700;font-size:.95rem;position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease);will-change:transform}
+.btn-p{color:#04121a;background:linear-gradient(120deg,var(--c1),var(--c2));
+  box-shadow:0 0 26px -6px var(--glow1),0 0 30px -10px var(--glow2)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 0 40px -4px var(--glow1),0 0 46px -8px var(--glow2)}
+.btn-s{border:1px solid var(--line);color:var(--text);background:var(--surface)}
+.btn-s:hover{border-color:var(--c1);box-shadow:0 0 22px -8px var(--glow1);transform:translateY(-3px)}
+
+.neon-frame{position:relative}
+.neon-frame::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.5px;
+  background:linear-gradient(130deg,var(--c1),transparent 35%,var(--c2));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.1s}.reveal[data-d="2"]{transition-delay:.2s}
+.reveal[data-d="3"]{transition-delay:.3s}.reveal[data-d="4"]{transition-delay:.4s}
+.lm{display:block;overflow:hidden}
+.lm .lm-in{display:block;transform:translateY(115%);transition:transform 1s var(--ease)}
+.in .lm .lm-in{transform:none}
+
+section{padding-block:clamp(72px,9vw,120px);position:relative;z-index:2}
+.shead{display:flex;align-items:flex-end;gap:22px;margin-bottom:clamp(40px,5vw,64px)}
+.s-num{font-family:var(--font-disp);font-size:clamp(2.6rem,5vw,3.8rem);line-height:1;
+  color:transparent;-webkit-text-stroke:1.5px var(--c1);opacity:.9}
+.s-kicker{color:var(--c2);font-weight:700;font-size:.9rem;letter-spacing:.5px;margin-bottom:6px}
+.s-title{font-family:var(--font-disp);font-weight:400;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.15;
+  text-shadow:0 0 26px var(--glow1)}
+[data-theme="light"] .s-title{text-shadow:none}
+
+/* هدر */
+header{position:fixed;top:0;right:0;left:0;z-index:100;height:76px;
+  background:var(--header);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;transition:border-color .4s,box-shadow .4s,background .5s}
+header.scrolled{border-bottom-color:var(--line);box-shadow:0 10px 40px -18px rgba(0,0,0,.5)}
+.h-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:var(--font-disp);font-size:1.7rem;display:flex;align-items:baseline;gap:2px}
+.logo em{font-style:normal;color:var(--c2);text-shadow:0 0 14px var(--glow2)}
+.logo i{width:9px;height:9px;border-radius:50%;background:var(--c1);box-shadow:0 0 12px var(--glow1);
+  display:inline-block;margin-inline-start:6px;animation:pulse 2.4s ease-in-out infinite}
+.nav{display:flex;gap:6px}
+.nav a{padding:8px 14px;font-size:.93rem;font-weight:500;color:var(--muted);position:relative;transition:color .3s}
+.nav a::after{content:'';position:absolute;bottom:2px;right:14px;left:14px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--c1),var(--c2));transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav a:hover,.nav a.active{color:var(--text)}
+.nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
+.nav a.active{color:var(--c1)}
+.h-actions{display:flex;align-items:center;gap:12px}
+.btn-sm{padding:9px 18px;font-size:.85rem}
+#themeBtn{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;
+  transition:box-shadow .35s,border-color .35s,transform .35s}
+#themeBtn:hover{border-color:var(--c1);box-shadow:0 0 18px -4px var(--glow1);transform:rotate(15deg)}
+#themeBtn svg{width:20px;height:20px;stroke:var(--c1);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+[data-theme="dark"] .ic-moon{display:none}
+[data-theme="light"] .ic-sun{display:none}
+#burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);
+  flex-direction:column;align-items:center;justify-content:center;gap:6px}
+#burger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:.4s var(--ease)}
+body.menu-open #burger span:first-child{transform:translateY(4px) rotate(45deg)}
+body.menu-open #burger span:last-child{transform:translateY(-4px) rotate(-45deg)}
+
+.mmenu{position:fixed;inset:0;z-index:98;background:linear-gradient(160deg,var(--bg-soft),var(--bg));
+  display:flex;flex-direction:column;justify-content:center;padding:90px 8% 40px;
+  transform:translateY(-103%);transition:transform .6s var(--ease);visibility:hidden}
+.mmenu.open{transform:none;visibility:visible}
+.mmenu a{display:flex;align-items:baseline;gap:16px;font-family:var(--font-disp);font-size:clamp(1.9rem,6vw,2.8rem);
+  padding:14px 0;border-bottom:1px solid var(--line);opacity:0;transform:translateY(24px);transition:.5s var(--ease)}
+.mmenu.open a{opacity:1;transform:none}
+.mmenu.open a:nth-child(1){transition-delay:.10s}.mmenu.open a:nth-child(2){transition-delay:.16s}
+.mmenu.open a:nth-child(3){transition-delay:.22s}.mmenu.open a:nth-child(4){transition-delay:.28s}
+.mmenu.open a:nth-child(5){transition-delay:.34s}.mmenu.open a:nth-child(6){transition-delay:.40s}
+.mmenu.open a:nth-child(7){transition-delay:.46s}
+.mmenu a small{font-family:var(--font-body);font-size:.8rem;color:var(--c1);font-weight:700}
+.mmenu a:hover{color:var(--c2);padding-right:10px}
+.mmenu .m-foot{margin-top:auto;color:var(--muted);font-size:.85rem;opacity:0;transition:opacity .5s .55s}
+.mmenu.open .m-foot{opacity:1}
+
+/* هرو */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 90px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.grid-bg{position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;opacity:.35;
+  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 60% 40%,#000 30%,transparent 75%);
+  mask-image:radial-gradient(ellipse 90% 70% at 60% 40%,#000 30%,transparent 75%)}
+.circuit{position:absolute;left:-40px;top:60px;width:min(560px,55vw);color:var(--c1);opacity:.5}
+.circuit .pulse{stroke-dasharray:6 12;animation:dash 3.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-180}}
+.glow-circle{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:floaty 9s ease-in-out infinite alternate}
+.g1{width:420px;height:420px;background:var(--glow1);top:-90px;left:8%}
+.g2{width:380px;height:380px;background:var(--glow2);bottom:-120px;right:-60px;animation-delay:-4s}
+[data-theme="light"] .glow-circle{opacity:.3}
+@keyframes floaty{to{transform:translateY(-28px)}}
+
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:999px;
+  border:1px solid var(--line);background:var(--surface);font-size:.85rem;font-weight:600;color:var(--muted)}
+.badge b{color:var(--c1)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--c3);box-shadow:0 0 10px var(--c3)}
+.hero h1{font-family:var(--font-disp);font-weight:400;font-size:clamp(3rem,8.5vw,6.2rem);line-height:1.1;
+  margin:22px 0 8px;text-shadow:0 0 34px var(--glow1),0 0 70px rgba(0,229,255,.2)}
+[data-theme="light"] .hero h1{text-shadow:none;color:var(--text)}
+.type-line{font-family:var(--font-disp);font-size:clamp(1.15rem,2.6vw,1.7rem);color:var(--c2);min-height:2.2em;
+  text-shadow:0 0 18px var(--glow2)}
+[data-theme="light"] .type-line{text-shadow:none}
+.type-line::after{content:'▌';color:var(--c1);animation:blink 1s steps(1) infinite;margin-inline-start:2px}
+@keyframes blink{50%{opacity:0}}
+.hero-desc{color:var(--muted);max-width:52ch;margin:18px 0 30px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:flex;gap:clamp(20px,4vw,48px);margin-top:46px;flex-wrap:wrap}
+.stat b{font-family:var(--font-disp);font-weight:400;font-size:2.5rem;line-height:1;display:block;color:var(--text)}
+.stat b em{font-style:normal;color:var(--c1);text-shadow:0 0 16px var(--glow1)}
+[data-theme="light"] .stat b em{text-shadow:none}
+.stat span{font-size:.83rem;color:var(--muted)}
+
+.hero-visual{position:relative;justify-self:center;width:min(430px,100%)}
+.frame{border-radius:var(--r-lg);padding:10px;background:linear-gradient(150deg,var(--surface-2),var(--bg-soft));box-shadow:var(--shadow)}
+.frame .img-wrap{border-radius:calc(var(--r-lg) - 6px);overflow:hidden}
+.frame img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(1.08) contrast(1.05);
+  animation:kenburns 16s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.09) translate(-2%,2%)}}
+.ring{position:absolute;inset:-18px;border:1.5px dashed var(--c1);border-radius:26px;opacity:.55;
+  animation:spin 30s linear infinite;pointer-events:none}
+.ring::after{content:'';position:absolute;top:-6px;left:50%;width:11px;height:11px;border-radius:50%;
+  background:var(--c2);box-shadow:0 0 14px var(--glow2)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.chip-float{position:absolute;padding:8px 16px;border-radius:999px;background:var(--surface);
+  border:1px solid var(--line);font-size:.8rem;font-weight:700;box-shadow:var(--shadow);
+  animation:floaty 6s ease-in-out infinite alternate;white-space:nowrap;z-index:3}
+.cf1{top:-18px;right:-14px;color:var(--c1)}
+.cf2{top:38%;left:-38px;color:var(--c2);animation-delay:-2s}
+.cf3{bottom:96px;right:-26px;color:var(--c3);animation-delay:-4s}
+
+.term{position:absolute;bottom:-30px;right:-16px;width:min(350px,105%);z-index:4;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);
+  box-shadow:var(--shadow),0 0 34px -12px var(--glow1);direction:ltr;text-align:left;overflow:hidden}
+.term-hd{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.term-hd span{width:11px;height:11px;border-radius:50%}
+.term-hd span:nth-child(1){background:#ff5f57}.term-hd span:nth-child(2){background:#febc2e}.term-hd span:nth-child(3){background:#28c840}
+.term-hd p{margin-left:auto;font-size:.7rem;color:var(--muted)}
+.term-bd{padding:14px 16px;font-family:'Courier New',monospace;font-size:.82rem;min-height:150px;line-height:1.8}
+.term-bd .pr{color:var(--c1)}
+.term-bd .cmd{color:var(--text)}
+.term-bd .out{color:var(--muted);padding-left:14px;opacity:0;transform:translateY(6px);transition:.4s}
+.term-bd .out.show{opacity:1;transform:none}
+.term-bd .out b{color:var(--c2);font-weight:700}
+
+/* مارکی */
+.marquee{overflow:hidden;border-block:1px solid var(--line);background:var(--bg-soft);padding:20px 0;position:relative;z-index:2}
+.marquee-track{display:flex;width:max-content;animation:mq 30s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:var(--font-disp);font-size:1.5rem;padding:0 26px;white-space:nowrap;color:var(--muted)}
+.marquee-track span b{color:var(--c1);font-weight:400;margin-left:52px;text-shadow:0 0 14px var(--glow1)}
+.marquee-track span:nth-child(even) b{color:var(--c2);text-shadow:0 0 14px var(--glow2)}
+@keyframes mq{to{transform:translateX(50%)}}
+
+/* درباره */
+.about-grid{display:grid;grid-template-columns:380px 1fr;gap:clamp(36px,6vw,80px);align-items:start}
+.about-sticky{position:sticky;top:110px}
+.about-photo{border-radius:var(--r-lg);overflow:hidden;margin-top:30px;position:relative}
+.about-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform 1.2s var(--ease)}
+.about-photo:hover img{transform:scale(1.06)}
+.about-photo::after{content:'ایستگاه کاری من — شیراز، جایی که ایده‌ها کدنویسی می‌شوند';position:absolute;inset-inline:0;bottom:0;
+  padding:36px 18px 14px;font-size:.78rem;color:#fff;background:linear-gradient(transparent,rgba(4,8,16,.9));text-align:center}
+.about-body p{color:var(--muted);margin-bottom:20px;max-width:64ch}
+.about-body p strong{color:var(--text)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:34px 0}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 20px;
+  transition:border-color .35s,transform .35s var(--ease),box-shadow .35s}
+.fact:hover{border-color:var(--c1);transform:translateY(-4px);box-shadow:0 0 26px -10px var(--glow1)}
+.fact span{display:block;font-size:.78rem;color:var(--muted);margin-bottom:4px}
+.fact b{font-weight:700;color:var(--text)}
+.wq{border-right:3px solid var(--c2);border-radius:var(--r-md);padding:26px 30px;
+  background:linear-gradient(115deg,color-mix(in srgb,var(--c2) 9%,transparent),transparent 60%)}
+.wq p{font-family:var(--font-disp);font-size:1.45rem;line-height:1.7;color:var(--text);margin:0}
+.wq cite{display:block;margin-top:12px;font-style:normal;font-size:.85rem;color:var(--c2)}
+
+/* مهارت‌ها */
+#skills{background:var(--bg-soft);border-block:1px solid var(--line)}
+.skills-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,80px);align-items:start}
+.skill{margin-bottom:26px}
+.s-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.s-top h4{font-weight:700;font-size:1rem}
+.b-val{font-family:var(--font-disp);color:var(--c1);font-size:1.1rem;text-shadow:0 0 12px var(--glow1)}
+[data-theme="light"] .b-val{text-shadow:none}
+.s-bar{height:9px;border-radius:99px;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}
+.s-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--c1),var(--c2));
+  box-shadow:0 0 14px var(--glow1);transition:width 1.6s var(--ease)}
+.tools{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--shadow)}
+.tools h3{font-family:var(--font-disp);font-weight:400;font-size:1.4rem;margin-bottom:6px}
+.tools > p{font-size:.85rem;color:var(--muted);margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 16px;border-radius:999px;border:1px solid var(--line);font-size:.83rem;font-weight:600;
+  background:var(--surface-2);transition:.35s var(--ease);cursor:default}
+.chip:hover{border-color:var(--c2);color:var(--c2);transform:translateY(-3px);box-shadow:0 0 16px -6px var(--glow2)}
+.tools .note{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);font-size:.83rem;color:var(--muted)}
+.tools .note b{color:var(--c3)}
+
+/* سابقهٔ کاری */
+.career-grid{display:grid;grid-template-columns:340px 1fr;gap:clamp(36px,6vw,80px);align-items:start}
+.career-sticky{position:sticky;top:110px}
+.big-word{font-family:var(--font-disp);font-size:clamp(3.4rem,7vw,5.6rem);line-height:1;color:transparent;
+  -webkit-text-stroke:1px var(--c1);opacity:.35;margin-top:20px;user-select:none}
+.career-sticky p{color:var(--muted);font-size:.92rem;margin-top:16px}
+.xp{position:relative;padding-right:36px;padding-bottom:38px}
+.xp::before{content:'';position:absolute;right:9px;top:8px;bottom:0;width:2px;
+  background:linear-gradient(var(--c1),color-mix(in srgb,var(--c1) 10%,transparent))}
+.xp:last-child::before{display:none}
+.xp::after{content:'';position:absolute;right:3px;top:6px;width:14px;height:14px;border-radius:50%;
+  background:var(--bg);border:2.5px solid var(--c1);box-shadow:0 0 14px var(--glow1)}
+.xp-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:24px 26px;
+  transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
+.xp-card:hover{transform:translateX(-8px);border-color:var(--c1);box-shadow:0 14px 40px -18px var(--glow1)}
+.xp-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.xp-head h3{font-family:var(--font-disp);font-weight:400;font-size:1.3rem}
+.xp-date{padding:4px 14px;border-radius:999px;font-size:.78rem;font-weight:700;
+  border:1px solid color-mix(in srgb,var(--c1) 45%,transparent);color:var(--c1);box-shadow:0 0 12px -4px var(--glow1)}
+.xp-org{font-size:.85rem;color:var(--c2);font-weight:700;margin-bottom:10px}
+.xp-card p{font-size:.9rem;color:var(--muted)}
+.xp-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.xp-tags span{font-size:.72rem;padding:3px 12px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--muted)}
+
+/* پروژه‌ها */
+#projects{background:var(--bg-soft);border-block:1px solid var(--line)}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.pcard{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--surface);
+  border:1px solid var(--line);display:flex;flex-direction:column;
+  transition:transform .45s var(--ease),box-shadow .45s,border-color .45s}
+.pcard:hover{transform:translateY(-8px);border-color:var(--c2);box-shadow:0 22px 50px -20px var(--glow2)}
+.pc-4{grid-column:span 4}.pc-3{grid-column:span 3}.pc-2{grid-column:span 2}
+.pc-media{position:relative;overflow:hidden}
+.pc-media img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 1s var(--ease);filter:saturate(1.05)}
+.pcard:hover .pc-media img{transform:scale(1.07)}
+.pc-year{position:absolute;top:14px;left:14px;padding:4px 14px;border-radius:999px;font-size:.78rem;font-weight:800;
+  background:rgba(5,8,15,.75);color:var(--c1);border:1px solid rgba(0,229,255,.4);backdrop-filter:blur(6px)}
+.pc-body{padding:22px 24px;flex:1;display:flex;flex-direction:column;gap:8px}
+.pc-body h3{font-family:var(--font-disp);font-weight:400;font-size:1.35rem}
+.pc-body p{font-size:.87rem;color:var(--muted);flex:1}
+.pc-tags{display:flex;gap:8px;flex-wrap:wrap}
+.pc-tags span{font-size:.7rem;padding:3px 11px;border-radius:999px;color:var(--c2);
+  border:1px solid color-mix(in srgb,var(--c2) 40%,transparent)}
+
+/* افتخارات */
+.honor{display:grid;grid-template-columns:120px 1fr 44px;align-items:center;gap:20px;
+  padding:24px 18px;border-bottom:1px solid var(--line);transition:.35s var(--ease);border-radius:var(--r-sm)}
+.honor:first-of-type{border-top:1px solid var(--line)}
+.honor:hover{background:var(--surface);padding-right:30px}
+.h-year{font-family:var(--font-disp);font-size:1.9rem;color:var(--c1);text-shadow:0 0 16px var(--glow1)}
+[data-theme="light"] .h-year{text-shadow:none}
+.honor h3{font-size:1.05rem;font-weight:800}
+.honor p{font-size:.85rem;color:var(--muted)}
+.h-arw{color:var(--c2);font-size:1.2rem;opacity:0;transform:translateX(8px);transition:.35s}
+.honor:hover .h-arw{opacity:1;transform:none}
+.honors-quote{margin-top:64px;text-align:center}
+.honors-quote blockquote{font-family:var(--font-disp);font-size:clamp(1.4rem,3.4vw,2.3rem);line-height:1.8;max-width:26ch;margin-inline:auto}
+.honors-quote blockquote em{font-style:normal;color:var(--c1);text-shadow:0 0 20px var(--glow1)}
+[data-theme="light"] .honors-quote blockquote em{text-shadow:none}
+.honors-quote cite{display:block;margin-top:16px;font-style:normal;color:var(--muted);font-size:.9rem}
+
+/* تماس */
+#contact{background:var(--bg-soft);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(36px,6vw,80px);align-items:start}
+.contact-info h3{font-family:var(--font-disp);font-weight:400;font-size:1.8rem;margin-bottom:14px}
+.contact-info > p{color:var(--muted);margin-bottom:32px;max-width:44ch}
+.cinfo{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.ci-ic{width:48px;height:48px;flex-shrink:0;border-radius:var(--r-sm);display:grid;place-items:center;
+  border:1px solid var(--line);background:var(--surface);color:var(--c1);box-shadow:0 0 18px -8px var(--glow1)}
+.ci-ic svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cinfo span{display:block;font-size:.76rem;color:var(--muted)}
+.cinfo b{font-weight:700}
+/* اصلاح جهت شماره تلفن */
+.ltr-num{direction:ltr;display:inline-block;unicode-bidi:embed;font-family:'Vazirmatn',system-ui,sans-serif;letter-spacing:.5px}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.contact-actions a{padding:10px 20px;border-radius:999px;border:1px solid var(--line);font-size:.85rem;font-weight:700;
+  color:var(--muted);transition:.35s var(--ease);background:var(--surface)}
+.contact-actions a:hover{color:var(--c1);border-color:var(--c1);box-shadow:0 0 18px -6px var(--glow1);transform:translateY(-3px)}
+.cform{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:34px;box-shadow:var(--shadow)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.8rem;font-weight:700;margin-bottom:8px;color:var(--muted)}
+.field input,.field textarea{width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-sm);
+  padding:13px 16px;color:var(--text);font-family:inherit;font-size:.92rem;transition:.3s;resize:vertical}
+.field input.ltr{direction:ltr;text-align:left}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--c1);box-shadow:0 0 0 3px var(--glow1)}
+.cform .btn{width:100%;justify-content:center}
+.form-hint{margin-top:12px;font-size:.78rem;color:var(--muted);text-align:center}
+
+/* نقشه */
+.map-wrap{margin-top:60px}
+.map-frame{border-radius:var(--r-lg);overflow:hidden;height:380px;box-shadow:var(--shadow)}
+.map-frame iframe{width:100%;height:100%;border:0;display:block}
+[data-theme="dark"] .map-frame iframe{filter:invert(.9) hue-rotate(180deg) saturate(.75) brightness(.92) contrast(.92)}
+.map-cap{margin-top:14px;font-size:.85rem;color:var(--muted);text-align:center}
+.map-cap a{color:var(--c1);font-weight:700}
+.map-cap a:hover{text-shadow:0 0 12px var(--glow1)}
+
+/* فوتر */
+footer{position:relative;overflow:hidden;border-top:1px solid var(--line);background:var(--bg-soft);z-index:2}
+.f-water{font-family:var(--font-disp);font-size:clamp(4rem,15vw,11rem);line-height:1;text-align:center;
+  color:transparent;-webkit-text-stroke:1px var(--line);user-select:none;margin-top:30px;opacity:.8}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding:50px 0}
+.f-brand .logo{font-size:1.9rem;margin-bottom:12px}
+.f-brand p{font-size:.87rem;color:var(--muted);max-width:34ch}
+.f-col h5{font-family:var(--font-disp);font-weight:400;font-size:1.15rem;margin-bottom:16px;color:var(--text)}
+.f-col ul{list-style:none}
+.f-col li{margin-bottom:10px}
+.f-col a{font-size:.88rem;color:var(--muted);transition:.3s;position:relative}
+.f-col a:hover{color:var(--c1);padding-right:8px}
+.soc{display:flex;flex-wrap:wrap;gap:10px}
+.soc a{padding:8px 18px;border-radius:999px;border:1px solid var(--line);font-size:.82rem;font-weight:700;
+  color:var(--muted);transition:.35s var(--ease)}
+.soc a:hover{color:var(--c2);border-color:var(--c2);box-shadow:0 0 18px -6px var(--glow2);transform:translateY(-3px)}
+.f-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-top:1px solid var(--line);padding:22px 0;font-size:.82rem;color:var(--muted)}
+.f-bottom code{font-family:'Courier New',monospace;color:var(--c3);direction:ltr}
+.f-bottom .heart{color:var(--c2);display:inline-block;animation:heartbeat 1.6s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}25%{transform:scale(1.25)}}
+
+#toTop{position:fixed;bottom:28px;left:28px;z-index:90;width:48px;height:48px;border-radius:14px;
+  border:1px solid var(--line);background:var(--surface);color:var(--c1);font-size:1.2rem;
+  opacity:0;transform:translateY(16px);pointer-events:none;transition:.4s var(--ease);box-shadow:var(--shadow)}
+#toTop.show{opacity:1;transform:none;pointer-events:auto}
+#toTop:hover{border-color:var(--c1);box-shadow:0 0 22px -6px var(--glow1)}
+#toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,24px);z-index:300;opacity:0;
+  background:var(--surface);border:1px solid var(--c1);color:var(--text);padding:14px 26px;border-radius:999px;
+  font-size:.9rem;font-weight:700;box-shadow:0 0 30px -8px var(--glow1);pointer-events:none;transition:.45s var(--ease)}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+@media(max-width:1024px){
+  .hero-in{grid-template-columns:1fr;gap:70px}
+  .hero-visual{width:min(420px,92%)}
+  .about-grid,.career-grid{grid-template-columns:1fr}
+  .about-sticky,.career-sticky{position:static}
+  .about-photo{max-width:400px}
+  .skills-grid,.contact-grid{grid-template-columns:1fr}
+  .pc-4,.pc-3,.pc-2{grid-column:span 3}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .nav{display:none}
+  #burger{display:flex}
+  .h-actions .btn-sm{display:none}
+}
+@media(max-width:640px){
+  .pc-4,.pc-3,.pc-2{grid-column:span 6}
+  .facts{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+  .honor{grid-template-columns:80px 1fr;gap:12px}
+  .h-arw{display:none}
+  .term{position:static;width:100%;margin-top:22px}
+  .chip-float{display:none}
+  .f-grid{grid-template-columns:1fr}
+  .shead{flex-direction:column;align-items:flex-start;gap:8px}
+  .map-frame{height:280px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .lm .lm-in{transform:none}
+  .marquee-track{animation:none!important;flex-wrap:wrap}
+  .type-line::after{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+<div id="spot" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ===== هدر ===== -->
+<header id="header">
+  <div class="container h-in">
+    <a class="logo" href="#home">مختاری<em>.</em><i></i></a>
+    <nav class="nav" aria-label="ناوبری اصلی">
+      <a href="#home" class="active">خانه</a>
+      <a href="#about">درباره</a>
+      <a href="#skills">مهارت‌ها</a>
+      <a href="#career">سابقهٔ کاری</a>
+      <a href="#projects">پروژه‌ها</a>
+      <a href="#honors">افتخارات</a>
+      <a href="#contact">تماس</a>
+    </nav>
+    <div class="h-actions">
+      <button id="themeBtn" aria-label="تغییر تم">
+        <svg class="ic-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8"/></svg>
+        <svg class="ic-moon" viewBox="0 0 24 24"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5z"/></svg>
+      </button>
+      <a href="#contact" class="btn btn-p btn-sm">استخدامم کنید</a>
+      <button id="burger" aria-label="منو" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- منوی موبایل -->
+<div class="mmenu" id="mmenu">
+  <a href="#home"><small>۰۱</small> خانه</a>
+  <a href="#about"><small>۰۲</small> درباره من</a>
+  <a href="#skills"><small>۰۳</small> مهارت‌ها</a>
+  <a href="#career"><small>۰۴</small> سابقهٔ کاری</a>
+  <a href="#projects"><small>۰۵</small> پروژه‌ها</a>
+  <a href="#honors"><small>۰۶</small> افتخارات</a>
+  <a href="#contact"><small>۰۷</small> تماس</a>
+  <p class="m-foot">جواد مختاری — نابغهٔ نوجوان دنیای وب از شیراز ⚡</p>
+</div>
+
+<main>
+<!-- ===== هرو ===== -->
+<section id="home" class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="grid-bg"></div>
+    <svg class="circuit" viewBox="0 0 600 600" fill="none">
+      <path d="M20 120 H180 L240 180 H420 M420 180 V320 H560" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+      <path class="pulse" d="M20 300 H140 L200 240 H360 V420 H540" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+      <path d="M80 520 H260 L320 460 H500" stroke="currentColor" stroke-width="1.5" opacity=".3"/>
+      <circle cx="180" cy="120" r="5" fill="currentColor"/><circle cx="420" cy="320" r="5" fill="currentColor"/>
+      <circle cx="200" cy="240" r="5" fill="currentColor"/><circle cx="320" cy="460" r="5" fill="currentColor"/>
+    </svg>
+    <div class="glow-circle g1"></div>
+    <div class="glow-circle g2"></div>
+  </div>
+
+  <div class="container hero-in">
+    <div class="hero-copy">
+      <span class="badge reveal"><i></i> توسعه‌دهندهٔ وب <b>•</b> طراح رابط کاربری <b>•</b> شیراز</span>
+      <h1 id="scrambleName" data-text="جواد مختاری">جواد مختاری</h1>
+      <p class="type-line" id="typeLine"></p>
+      <p class="hero-desc reveal" data-d="1">من جواد مختاری هستم؛ متولد ۱۳۸۹ در شیراز. از ۱۲ سالگی با کدنویسی آشنا شدم و حالا ۱۵ ساله هستم و بیش از ۲۵ پروژهٔ واقعی تحویل داده‌ام. عاشق ساخت چیزهای جدید با کد هستم.</p>
+      <div class="hero-btns reveal" data-d="2">
+        <a href="#contact" class="btn btn-p">شروع همکاری ↗</a>
+        <button class="btn btn-s" id="resumeBtn">دانلود رزومه ⤓</button>
+      </div>
+      <div class="stats reveal" data-d="3">
+        <div class="stat"><b><em data-count="3" data-suffix="+">۰</em></b><span>سال تجربهٔ کدنویسی</span></div>
+        <div class="stat"><b><em data-count="25" data-suffix="+">۰</em></b><span>پروژهٔ تحویل‌شده</span></div>
+        <div class="stat"><b><em data-count="18" data-suffix="+">۰</em></b><span>مشتری راضی</span></div>
+        <div class="stat"><b><em data-count="5">۰</em></b><span>گواهینامهٔ آنلاین</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" data-d="2">
+      <div class="ring" aria-hidden="true"></div>
+      <div class="frame neon-frame">
+        <div class="img-wrap">
+          <!-- تصویر تکنولوژی — ست‌آپ کدنویسی -->
+          <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=560&h=700&fit=crop" alt="ست‌آپ کدنویسی نئونی">
+        </div>
+      </div>
+      <span class="chip-float cf1">⚡ +۲۵ پروژهٔ موفق</span>
+      <span class="chip-float cf2">🎨 طراحی رابط کاربری</span>
+      <span class="chip-float cf3">🚀 متولد ۱۳۸۹</span>
+      <div class="term" aria-hidden="true">
+        <div class="term-hd"><span></span><span></span><span></span><p>javad@shiraz — zsh</p></div>
+        <div class="term-bd" id="termBody"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- مارکی -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>طراحی وب‌سایت <b>✦</b></span><span>توسعهٔ فرانت‌اند <b>✦</b></span><span>رابط کاربری مدرن <b>✦</b></span>
+    <span>React <b>✦</b></span><span>سئو و بهینه‌سازی <b>✦</b></span><span>JavaScript <b>✦</b></span>
+    <span>طراحی وب‌سایت <b>✦</b></span><span>توسعهٔ فرانت‌اند <b>✦</b></span><span>رابط کاربری مدرن <b>✦</b></span>
+    <span>React <b>✦</b></span><span>سئو و بهینه‌سازی <b>✦</b></span><span>JavaScript <b>✦</b></span>
+  </div>
+</div>
+
+<!-- ===== درباره ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <aside class="about-sticky">
+        <div class="shead reveal" style="margin-bottom:0">
+          <span class="s-num">۰۲</span>
+          <div><p class="s-kicker">آشنایی با جواد</p>
+            <h2 class="s-title"><span class="lm"><span class="lm-in">دربارهٔ من</span></span></h2></div>
+        </div>
+        <div class="about-photo reveal" data-d="1">
+          <!-- تصویر پژو پارس -->
+          <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=520&h=520&fit=crop" alt="پژو پارس — ماشین مورد علاقهٔ من">
+        </div>
+      </aside>
+      <div class="about-body">
+        <p class="reveal">سال <strong>۱۴۰۱</strong>، وقتی تنها ۱۲ سال داشتم، اولین خط <strong>HTML</strong> خودم را نوشتم. یک صفحهٔ ساده با پس‌زمینهٔ آبی و یک نوشتهٔ «سلام دنیا!» — اما همان لحظه فهمیدم می‌خواهم مسیر زندگی‌ام را با کد بسازم.</p>
+        <p class="reveal" data-d="1">حالا ۱۵ ساله هستم و بیش از <strong>۲۵ پروژهٔ واقعی</strong> تحویل داده‌ام؛ از وب‌سایت‌های شرکتی و فروشگاهی تا رابط‌های کاربری پیچیده. باور دارم سن فقط یک عدد است — <strong>مهم مهارت، پشتکار و کیفیت کار است.</strong></p>
+        <div class="facts">
+          <div class="fact reveal"><span>تولد</span><b>۱۳۸۹ — شیراز، فارس</b></div>
+          <div class="fact reveal" data-d="1"><span>تحصیلات</span><b>دانش‌آموز سال یازدهم — رشتهٔ کامپیوتر</b></div>
+          <div class="fact reveal" data-d="2"><span>تخصص</span><b>توسعهٔ وب و طراحی UI/UX</b></div>
+          <div class="fact reveal" data-d="3"><span>وضعیت</span><b>آمادهٔ پذیرش پروژهٔ جدید ✅</b></div>
+        </div>
+        <blockquote class="wq reveal">
+          <p>«سن مهم نیست؛ مهم اینه که چقدر یاد می‌گیری و چقدر خوب اجرا می‌کنی.»</p>
+          <cite>— فلسفهٔ کاری من</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== مهارت‌ها ===== -->
+<section id="skills">
+  <div class="container">
+    <div class="shead reveal">
+      <span class="s-num">۰۳</span>
+      <div><p class="s-kicker">آنچه بر آن چیره‌ام</p>
+        <h2 class="s-title"><span class="lm"><span class="lm-in">مهارت‌های فنی</span></span></h2></div>
+    </div>
+    <div class="skills-grid">
+      <div>
+        <div class="skill reveal"><div class="s-top"><h4>توسعهٔ فرانت‌اند (HTML / CSS / JS)</h4><span class="b-val" data-val="92">۰٪</span></div><div class="s-bar"><div class="s-fill" data-w="92"></div></div></div>
+        <div class="skill reveal" data-d="1"><div class="s-top"><h4>طراحی رابط و تجربهٔ کاربری (UI/UX)</h4><span class="b-val" data-val="85">۰٪</span></div><div class="s-bar"><div class="s-fill" data-w="85"></div></div></div>
+        <div class="skill reveal" data-d="2"><div class="s-top"><h4>React و Vue.js</h4><span class="b-val" data-val="80">۰٪</span></div><div class="s-bar"><div class="s-fill" data-w="80"></div></div></div>
+        <div class="skill reveal" data-d="3"><div class="s-top"><h4>وردپرس و ووکامرس</h4><span class="b-val" data-val="84">۰٪</span></div><div class="s-bar"><div class="s-fill" data-w="84"></div></div></div>
+        <div class="skill reveal" data-d="4"><div class="s-top"><h4>سئو و بهینه‌سازی سرعت</h4><span class="b-val" data-val="78">۰٪</span></div><div class="s-bar"><div class="s-fill" data-w="78"></div></div></div>
+        <div class="skill reveal" data-d="4"><div class="s-top"><h4>Node.js و بک‌اند پایه</h4><span class="b-val" data-val="70">۰٪</span></div><div class="s-bar"><div class="s-fill" data-w="70"></div></div></div>
+      </div>
+      <aside class="tools neon-frame reveal" data-d="2">
+        <h3>جعبه‌ابزار من</h3>
+        <p>فناوری‌ها و ابزارهایی که هر روز باهاشون کار می‌کنم:</p>
+        <div class="chips">
+          <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span>
+          <span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Vue.js</span>
+          <span class="chip">Node.js</span><span class="chip">PHP</span><span class="chip">وردپرس</span>
+          <span class="chip">Tailwind</span><span class="chip">Figma</span><span class="chip">Git</span>
+          <span class="chip">MySQL</span><span class="chip">سئو</span><span class="chip">REST API</span>
+        </div>
+        <p class="note">⚡ از ۱۲ سالگی شروع کردم و تا الان بیش از <b>۲۵ وب‌سایت حرفه‌ای</b> تحویل داده‌ام — با تمرکز بر سرعت، سئو و طراحی زیبا.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== سابقهٔ کاری ===== -->
+<section id="career">
+  <div class="container">
+    <div class="career-grid">
+      <aside class="career-sticky">
+        <div class="shead reveal" style="margin-bottom:0">
+          <span class="s-num">۰۴</span>
+          <div><p class="s-kicker">مسیر حرفه‌ای</p>
+            <h2 class="s-title"><span class="lm"><span class="lm-in">سابقهٔ کاری</span></span></h2></div>
+        </div>
+        <p class="reveal" data-d="1">از نوشتن اولین «سلام دنیا» در ۱۲ سالگی تا تحویل پروژه‌های واقعی به مشتریان — هر قدمی، یک جهش بزرگ بود.</p>
+        <div class="big-word reveal" data-d="2">Javad<br>Résumé</div>
+      </aside>
+      <div class="xp-list">
+
+        <article class="xp reveal">
+          <div class="xp-card">
+            <div class="xp-head"><h3>توسعه‌دهندهٔ فریلنسر</h3><span class="xp-date">۱۴۰۳ — اکنون</span></div>
+            <p class="xp-org">همکاری مستقل با مشتریان</p>
+            <p>طراحی و ساخت وب‌سایت‌های شرکتی، فروشگاهی و لندینگ‌پیج برای مشتریان مختلف؛ از تحلیل نیاز تا تحویل نهایی و پشتیبانی. بیش از ۱۵ پروژه در این دوره تحویل شد.</p>
+            <div class="xp-tags"><span>فریلنسری</span><span>پروژهٔ کامل</span><span>پشتیبانی</span></div>
+          </div>
+        </article>
+
+        <article class="xp reveal" data-d="1">
+          <div class="xp-card">
+            <div class="xp-head"><h3>طراح وب و فرانت‌اند</h3><span class="xp-date">۱۴۰۲ — ۱۴۰۳</span></div>
+            <p class="xp-org">همکاری با تیم محلی در شیراز</p>
+            <p>عضو تیم ۳ نفرهٔ طراحی وب؛ مسئول پیاده‌سازی رابط کاربری و ریسپانسیو کردن پروژه‌ها. اولین تجربهٔ کار تیمی حرفه‌ای و آشنایی عمیق با React.</p>
+            <div class="xp-tags"><span>کار تیمی</span><span>React</span><span>ریسپانسیو</span></div>
+          </div>
+        </article>
+
+        <article class="xp reveal" data-d="2">
+          <div class="xp-card">
+            <div class="xp-head"><h3>ساخت اولین وب‌سایت‌های واقعی</h3><span class="xp-date">۱۴۰۱ — ۱۴۰۲</span></div>
+            <p class="xp-org">پروژه‌های شخصی و محلی</p>
+            <p>ساخت اولین سایت‌ها برای مغازه‌ها و کسب‌وکارهای محلی شیراز؛ یادگیری وردپرس، درگاه پرداخت و اصول سئو. هر پروژه یک کلاس درس بزرگ بود.</p>
+            <div class="xp-tags"><span>وردپرس</span><span>سئو</span><span>پروژهٔ محلی</span></div>
+          </div>
+        </article>
+
+        <article class="xp reveal" data-d="3">
+          <div class="xp-card">
+            <div class="xp-head"><h3>شروع یادگیری کدنویسی</h3><span class="xp-date">۱۴۰۱</span></div>
+            <p class="xp-org">خودآموزی — ۱۲ سالگی</p>
+            <p>نوشتن اولین خط HTML، کشف CSS و آشنایی با جاوااسکریپت از طریق دوره‌های آنلاین رایگان. نقطهٔ شروع مسیری که هنوز ادامه دارد و هر روز هیجان‌انگیزتر می‌شود.</p>
+            <div class="xp-tags"><span>HTML/CSS</span><span>خودآموزی</span><span>نقطهٔ شروع</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== پروژه‌ها ===== -->
+<section id="projects">
+  <div class="container">
+    <div class="shead reveal">
+      <span class="s-num">۰۵</span>
+      <div><p class="s-kicker">نمونه‌کارها</p>
+        <h2 class="s-title"><span class="lm"><span class="lm-in">پروژه‌های منتخب</span></span></h2></div>
+    </div>
+    <div class="p-grid">
+
+      <article class="pcard pc-4 reveal">
+        <div class="pc-media">
+          <!-- تصویر تکنولوژی — داشبورد -->
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=520&fit=crop" alt="داشبورد فروشگاه آنلاین">
+          <span class="pc-year">۱۴۰۴</span>
+        </div>
+        <div class="pc-body"><h3>فروشگاه اینترنتی «بازار شیراز»</h3>
+          <p>فروشگاه کامل با درگاه پرداخت آنلاین، پنل مدیریت و نسخهٔ موبایل؛ افزایش ۳ برابری فروش مشتری در سه ماه اول.</p>
+          <div class="pc-tags"><span>React</span><span>Node.js</span><span>درگاه پرداخت</span></div>
+        </div>
+      </article>
+
+      <article class="pcard pc-2 reveal" data-d="1">
+        <div class="pc-media">
+          <!-- تصویر تکنولوژی — کد -->
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="صفحهٔ کدنویسی">
+          <span class="pc-year">۱۴۰۳</span>
+        </div>
+        <div class="pc-body"><h3>سایت شرکتی «صنعت‌گستر»</h3><p>معرفی شرکت و کاتالوگ محصولات صنعتی با طراحی اختصاصی و سئوی حرفه‌ای.</p>
+          <div class="pc-tags"><span>وردپرس</span><span>سئو</span></div>
+        </div>
+      </article>
+
+      <article class="pcard pc-2 reveal" data-d="1">
+        <div class="pc-media">
+          <!-- تصویر تکنولوژی — موبایل -->
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="اپلیکیشن موبایل">
+          <span class="pc-year">۱۴۰۳</span>
+        </div>
+        <div class="pc-body"><h3>سامانهٔ رزرو «میزبان»</h3><p>رزرو آنلاین میز رستوران با پیامک تأیید و پنل مدیریت.</p>
+          <div class="pc-tags"><span>Vue.js</span><span>پیامک</span></div>
+        </div>
+      </article>
+
+      <article class="pcard pc-4 reveal" data-d="2">
+        <div class="pc-media">
+          <!-- تصویر تکنولوژی — سرور و شبکه -->
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=520&fit=crop" alt="زیرساخت فناوری">
+          <span class="pc-year">۱۴۰۳</span>
+        </div>
+        <div class="pc-body"><h3>پلتفرم آموزشی «درس‌پلاس»</h3>
+          <p>سامانهٔ دورهٔ آنلاین با پخش ویدیو، آزمون و صدور گواهینامه؛ میزبان بیش از ۳۰۰ دانشجو در ماه اول.</p>
+          <div class="pc-tags"><span>اپلیکیشن وب</span><span>ویدیو</span><span>داشبورد</span></div>
+        </div>
+      </article>
+
+      <article class="pcard pc-3 reveal" data-d="2">
+        <div class="pc-media">
+          <!-- تصویر تکنولوژی — لپ‌تاپ -->
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&h=430&fit=crop" alt="لپ‌تاپ و توسعهٔ وب">
+          <span class="pc-year">۱۴۰۲</span>
+        </div>
+        <div class="pc-body"><h3>پنل مدیریت کلینیک</h3><p>نوبت‌دهی آنلاین و پروندهٔ بیمار — کاهش ۶۰٪ تماس‌های تلفنی.</p>
+          <div class="pc-tags"><span>نوبت‌دهی</span><span>داشبورد</span></div>
+        </div>
+      </article>
+
+      <article class="pcard pc-3 reveal" data-d="3">
+        <div class="pc-media">
+          <!-- تصویر تکنولوژی — نئون -->
+          <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=700&h=430&fit=crop" alt="طراحی نئونی">
+          <span class="pc-year">۱۴۰۴</span>
+        </div>
+        <div class="pc-body"><h3>همین وب‌سایت رزومه! 😉</h3><p>تک‌صفحه‌ای نئونی با دو تم، انیمیشن روان و ارسال مستقیم به واتساپ.</p>
+          <div class="pc-tags"><span>HTML/CSS/JS</span><span>انیمیشن</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== افتخارات ===== -->
+<section id="honors">
+  <div class="container">
+    <div class="shead reveal">
+      <span class="s-num">۰۶</span>
+      <div><p class="s-kicker">دستاوردها</p>
+        <h2 class="s-title"><span class="lm"><span class="lm-in">افتخارات و گواهینامه‌ها</span></span></h2></div>
+    </div>
+    <div class="reveal">
+      <div class="honor"><span class="h-year">۱۴۰۴</span><div><h3>تحویل ۱۵ پروژه در یک سال</h3><p>رکورد شخصی در نظم و تحویل به‌موقع — همه با رضایت کامل مشتری</p></div><span class="h-arw">←</span></div>
+      <div class="honor"><span class="h-year">۱۴۰۳</span><div><h3>گواهینامهٔ React — دورهٔ بین‌المللی</h3><p>تکمیل دورهٔ پیشرفتهٔ توسعهٔ اپلیکیشن با React</p></div><span class="h-arw">←</span></div>
+      <div class="honor"><span class="h-year">۱۴۰۳</span><div><h3>اولین درآمد رسمی از وب در ۱۴ سالگی</h3><p>فروش اولین پروژهٔ فریلنسری — ثابت کردم سن فقط یک عدد است</p></div><span class="h-arw">←</span></div>
+      <div class="honor"><span class="h-year">۱۴۰۲</span><div><h3>گواهینامهٔ تخصصی سئو</h3><p>بهینه‌سازی موتورهای جستجو و سرعت سایت</p></div><span class="h-arw">←</span></div>
+      <div class="honor"><span class="h-year">۱۴۰۱</span><div><h3>شروع کدنویسی در ۱۲ سالگی</h3><p>اولین خط HTML — نقطهٔ شروع مسیری که تمام زندگی‌ام را تغییر داد</p></div><span class="h-arw">←</span></div>
+    </div>
+    <div class="honors-quote reveal">
+      <blockquote>«اگر چیزی بسازی که <em>زندگی مردم را ساده‌تر کند</em>، موفقیت خودش به دنبالت می‌آید.»</blockquote>
+      <cite>— جواد مختاری</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ===== تماس ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="shead reveal">
+      <span class="s-num">۰۷</span>
+      <div><p class="s-kicker">بیایید در ارتباط باشیم</p>
+        <h2 class="s-title"><span class="lm"><span class="lm-in">تماس با من</span></span></h2></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>جواد مختاری هستم؛ پیام بدهید، سریع جواب می‌دهم. ⚡</h3>
+        <p>برای سفارش پروژه، مشاوره یا هر سوالی، از طریق واتساپ، تماس مستقیم یا فرم روبرو در ارتباط باشید.</p>
+
+        <div class="cinfo">
+          <div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13 1 .36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.8.57 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div><span>شماره تماس / واتساپ</span><b><span class="ltr-num">0917 976 5837</span></b></div>
+        </div>
+
+        <div class="cinfo">
+          <div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><span>آدرس</span><b>ایران، فارس، شیراز</b></div>
+        </div>
+
+        <div class="contact-actions">
+          <a href="tel:+989179765837">📞 تماس مستقیم</a>
+          <a href="https://wa.me/989179765837" target="_blank" rel="noopener">💬 گفتگو در واتساپ</a>
+          <a href="https://www.openstreetmap.org/search?query=%D9%86%D8%B5%D8%B1%D8%A2%D8%A8%D8%A7%D8%AF%20%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2" target="_blank" rel="noopener">🗺️ مسیریابی</a>
+        </div>
+      </div>
+
+      <form class="cform neon-frame reveal" data-d="1" id="contactForm" novalidate>
+        <div class="f-row">
+          <div class="field">
+            <label for="fname">نام شما</label>
+            <input id="fname" type="text" autocomplete="name" placeholder="مثلاً: علی رضایی" required>
+          </div>
+          <div class="field">
+            <label for="femail">ایمیل</label>
+            <input id="femail" class="ltr" type="email" inputmode="email" autocomplete="email"
+                   placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fsub">موضوع</label>
+          <input id="fsub" type="text" autocomplete="off" placeholder="سفارش سایت، مشاوره، همکاری…">
+        </div>
+        <div class="field">
+          <label for="fmsg">پیام</label>
+          <textarea id="fmsg" rows="5" placeholder="از ایده‌تان بگویید…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-p">ارسال پیام در واتساپ 💬</button>
+        <p class="form-hint">با کلیک روی دکمه، پیام شما مستقیم به واتساپ جواد مختاری ارسال می‌شود.</p>
+      </form>
+    </div>
+
+    <!-- نقشه -->
+    <div class="map-wrap reveal">
+      <div class="map-frame neon-frame">
+        <iframe title="نقشه — شیراز "
+          src="https://www.openstreetmap.org/export/embed.html?bbox=52.5200%2C29.5560%2C52.6620%2C29.6440&amp;layer=mapnik&amp;marker=29.6000%2C52.5900"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <p class="map-cap">📍 ایران، فارس، شیراز•
+        <a href="https://www.openstreetmap.org/search?query=%D9%86%D8%B5%D8%B1%D8%A2%D8%A8%D8%A7%D8%AF%20%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2" target="_blank" rel="noopener">مشاهده روی نقشه</a>
+      </p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== فوتر ===== -->
+<footer>
+  <div class="f-water" aria-hidden="true">MOKHTARI</div>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="logo" href="#home">مختاری<em>.</em><i></i></a>
+        <p>جواد مختاری — توسعه‌دهندهٔ وب و طراح رابط کاربری از شیراز. متولد ۱۳۸۹ و آمادهٔ ساخت هر ایده‌ای که در سر دارید.</p>
+      </div>
+      <div class="f-col">
+        <h5>دسترسی سریع</h5>
+        <ul>
+          <li><a href="#about">درباره من</a></li>
+          <li><a href="#skills">مهارت‌ها</a></li>
+          <li><a href="#career">سابقهٔ کاری</a></li>
+          <li><a href="#projects">پروژه‌ها</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>خدمات</h5>
+        <ul>
+          <li><a href="#skills">طراحی وب‌سایت</a></li>
+          <li><a href="#skills">فروشگاه اینترنتی</a></li>
+          <li><a href="#skills">سئو و بهینه‌سازی</a></li>
+          <li><a href="#skills">مشاورهٔ فنی</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>راه‌های ارتباطی</h5>
+        <div class="soc">
+          <a href="tel:+989179765837">📞 تماس</a>
+          <a href="https://wa.me/989179765837" target="_blank" rel="noopener">💬 واتساپ</a>
+          <a href="#contact">✉️ فرم تماس</a>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© <span id="year">۱۴۰۴</span> جواد مختاری — تمام حقوق محفوظ. ساخته‌شده با <span class="heart">♥</span> و کمی کد.</p>
+      <code>$ exit 0 — always keep building_</code>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="بازگشت به بالا">↑</button>
+<div id="toast" role="status"></div>
+
+<script>
+(function(){
+'use strict';
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const fa=n=>Number(n).toLocaleString('fa-IR');
+const WA_NUMBER='989179765837';
+
+/* تم */
+const html=document.documentElement,themeBtn=$('#themeBtn');
+themeBtn.addEventListener('click',()=>{
+  const next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+  html.setAttribute('data-theme',next);
+  try{localStorage.setItem('jm-theme',next)}catch(e){}
+  toast(next==='dark'?'🌙 تم تاریک فعال شد':'☀️ تم روشن فعال شد');
+});
+
+/* هدر */
+const header=$('#header'),progress=$('#progress'),toTop=$('#toTop');
+function onScroll(){
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  header.classList.toggle('scrolled',y>20);
+  progress.style.transform=`scaleX(${h>0?y/h:0})`;
+  toTop.classList.toggle('show',y>600);
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+toTop.addEventListener('click',()=>scrollTo({top:0,behavior:reduced?'auto':'smooth'}));
+
+/* منوی موبایل */
+const burger=$('#burger'),mmenu=$('#mmenu');
+function toggleMenu(force){
+  const open=force!==undefined?force:!mmenu.classList.contains('open');
+  mmenu.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);
+  burger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';
+}
+burger.addEventListener('click',()=>toggleMenu());
+$$('.mmenu a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+
+/* ظاهرشدن */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+$$('.reveal').forEach(el=>{reduced?el.classList.add('in'):io.observe(el)});
+
+/* اسکرمبل */
+const GLYPHS='ابتثجچحخدذرزسشصطظعغفقکگلمنوهی۰۱۲۳۴۵۶۷۸۹♦⚡';
+function scramble(el){
+  const txt=el.dataset.text;if(reduced||!txt){el.textContent=txt||'';return;}
+  let f=0;const total=Math.max(26,txt.length*4);
+  (function tick(){
+    const p=f/total,lock=Math.floor(p*txt.length);let out='';
+    for(let i=0;i<txt.length;i++){out+=(i<lock||txt[i]===' ')?txt[i]:GLYPHS[Math.random()*GLYPHS.length|0]}
+    el.textContent=out;if(f++<total)setTimeout(tick,34);else el.textContent=txt;
+  })();
+}
+const nameEl=$('#scrambleName');
+const ioName=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){setTimeout(()=>scramble(nameEl),300);ioName.unobserve(nameEl)}
+}),{threshold:.3});
+ioName.observe(nameEl);
+
+/* تایپ نقش‌ها */
+const roles=['توسعه‌دهندهٔ وب ⚙','طراح رابط کاربری ✦','متخصص جاوااسکریپت ⚡','نوجوان خلاق از شیراز ✧','از ایده تا اجرا، کنار شما ⌘'];
+const typeEl=$('#typeLine');
+if(reduced){typeEl.textContent=roles[0]}
+else{
+  let ri=0,ci=0,del=false;
+  (function loop(){
+    const r=roles[ri];typeEl.textContent=r.slice(0,ci);
+    if(!del&&ci<r.length){ci++;setTimeout(loop,75)}
+    else if(!del){del=true;setTimeout(loop,2000)}
+    else if(ci>0){ci--;setTimeout(loop,32)}
+    else{del=false;ri=(ri+1)%roles.length;setTimeout(loop,450)}
+  })();
+}
+
+/* ترمینال */
+const termData=[
+  {c:'whoami',o:'javad.mokhtari — توسعه‌دهنده • طراح • ۱۵ ساله'},
+  {c:'cat motto.txt',o:'«<b>سن فقط یک عدد است، مهارت حرف اول را می‌زند</b>»'},
+  {c:'ls skills/',o:'HTML  CSS  JavaScript  React  WordPress'}
+];
+const termBody=$('#termBody');
+function buildTerminal(instant){
+  termBody.innerHTML='';
+  termData.forEach(l=>{
+    const row=document.createElement('div');
+    row.innerHTML='<span class="pr">javad@shiraz:~$ </span><span class="cmd"></span>';
+    const out=document.createElement('div');out.className='out';out.innerHTML=l.o;
+    termBody.append(row,out);
+  });
+  if(instant){$$('#termBody .cmd').forEach((el,i)=>el.textContent=termData[i].c);$$('#termBody .out').forEach(el=>el.classList.add('show'));return}
+  const cmds=$$('#termBody .cmd'),outs=$$('#termBody .out');let li=0;
+  (function typeLine(){
+    if(li>=cmds.length)return;let ch=0;const target=termData[li].c;
+    (function typeChar(){
+      if(ch<=target.length){cmds[li].textContent=target.slice(0,ch++);setTimeout(typeChar,55)}
+      else{outs[li].classList.add('show');li++;setTimeout(typeLine,650)}
+    })();
+  })();
+}
+setTimeout(()=>buildTerminal(reduced),800);
+
+/* شمارنده */
+function animateNum(el,to,suffix,dur){
+  if(reduced){el.textContent=fa(to)+(suffix||'');return}
+  const t0=performance.now();
+  (function step(t){
+    const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);
+    el.textContent=fa(Math.round(to*e))+(suffix||'');if(p<1)requestAnimationFrame(step)
+  })(t0);
+}
+const ioCount=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){animateNum(e.target,+e.target.dataset.count,e.target.dataset.suffix||'',1600);ioCount.unobserve(e.target)}
+}),{threshold:.6});
+$$('[data-count]').forEach(el=>ioCount.observe(el));
+
+/* نوار مهارت */
+const ioBar=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const fill=e.target.querySelector('.s-fill'),val=e.target.querySelector('.b-val');
+  fill.style.width=fill.dataset.w+'%';animateNum(val,+val.dataset.val,'٪',1500);ioBar.unobserve(e.target)
+}),{threshold:.5});
+$$('.skill').forEach(el=>ioBar.observe(el));
+
+/* ناوبری فعال */
+const ioSec=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){$$('.nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}
+}),{rootMargin:'-42% 0px -52% 0px'});
+$$('main section[id]').forEach(s=>ioSec.observe(s));
+
+/* نور موس */
+if(!reduced&&matchMedia('(pointer:fine)').matches){
+  const spot=$('#spot');
+  addEventListener('pointermove',e=>{spot.style.setProperty('--x',e.clientX+'px');spot.style.setProperty('--y',e.clientY+'px')},{passive:true});
+}
+
+/* توست */
+const toastEl=$('#toast');let toastTimer;
+function toast(msg){toastEl.textContent=msg;toastEl.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove('show'),2600)}
+$('#resumeBtn').addEventListener('click',()=>toast('✨ نسخهٔ نمایشی — فایل رزومه به‌زودی'));
+
+/* فرم ➜ واتساپ */
+const contactForm=$('#contactForm');
+contactForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=$('#fname').value.trim(),email=$('#femail').value.trim(),
+        sub=$('#fsub').value.trim()||'پیام از وب‌سایت',msg=$('#fmsg').value.trim();
+  if(!name||!msg){toast('⚠️ نام و پیام را کامل کنید');return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){toast('⚠️ ایمیل معتبر نیست');$('#femail').focus();return}
+  const text=['👋 پیام جدید از وب‌سایت رزومه','──────────────','👤 نام: '+name,'📧 ایمیل: '+email,'📌 موضوع: '+sub,'💬 پیام: '+msg].join('\n');
+  const url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(text);
+  toast('در حال انتقال به واتساپ… 🚀');
+  const win=window.open(url,'_blank');if(!win)location.href=url;
+  contactForm.reset();
+});
+
+/* سال فوتر */
+$('#year').textContent=new Intl.DateTimeFormat('fa-IR',{year:'numeric'}).format(new Date());
+})();
+</script>
+</body>
+</html>
